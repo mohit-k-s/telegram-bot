@@ -77,9 +77,7 @@ def handle_update():
 
 
     print(update)
-    print(text.decode('utf-8'))
 
-    sendMessage(chat_id, make_reply(text))
 
     return ""
 
