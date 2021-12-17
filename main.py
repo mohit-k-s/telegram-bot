@@ -71,10 +71,13 @@ def make_reply(msg):
 def handle_update():
 
     update = bottle.request.json
-    message   = update['message']
-    chat_id = message['chat']['id']
-    text    = message['text']
+    # message   = update['message']
+    # chat_id = message['chat']['id']
+    # text    = message['text']
+
+
     print(update)
+    print(text.decode('utf-8'))
 
     sendMessage(chat_id, make_reply(text))
 
