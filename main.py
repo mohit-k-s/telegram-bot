@@ -80,8 +80,11 @@ def handle_update():
 
     return ""
 
+def handle_home():
+    return "This is bot home"
 
 if __name__ == "__main__":
     app = bottle.Bottle()
+    app.route('/' , "GET", handle_home)
     app.route("/update", "POST", handle_update)
     app.run(host="0.0.0.0",  port = int(os.environ.get("PORT", 5000)), debug=True)
