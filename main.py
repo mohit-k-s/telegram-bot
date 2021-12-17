@@ -4,7 +4,8 @@ import os
 from bs4 import BeautifulSoup as soup
 from urllib.request import urlopen as uReq
 import string
-TOKEN ="5015472309:AAFyKDFR5EyilqkMPRom61x0qxmwjddhADk"
+
+TOKEN = os.environ.get('TOKEN')
 
 def soupify(url):
     my_url=url
@@ -83,4 +84,4 @@ def handle_update():
 if __name__ == "__main__":
     app = bottle.Bottle()
     app.route("/update", "POST", handle_update)
-    app.run(host="127.0.0.1",  port = int(os.environ.get("PORT", 5000)), debug=True)
+    app.run(host="0.0.0.0",  port = int(os.environ.get("PORT", 5000)), debug=True)
