@@ -1,5 +1,4 @@
 const {spawn} = require('child_process');
-var exec = require('child_process').exec
 
 
 exports.handler = async (event) => {
