@@ -5,7 +5,8 @@ exports.handler = async (event) => {
   const { message } = JSON.parse(event.body);
   const chatid = message.chat.id;
   const command = message.text;
-  const python = spawn('python3', ['netlify/functions/main.py', `${command}` , chatid , command]);
+  console.log(process.env.PATH);
+  const python = spawn('python', ['netlify/functions/main.py', `${command}` , chatid , command]);
   python.on('error' , (err) =>{
     console.log(err);
   })
