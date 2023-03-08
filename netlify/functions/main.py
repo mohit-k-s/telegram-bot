@@ -3,7 +3,6 @@ import os
 from bs4 import BeautifulSoup as soup
 from urllib.request import urlopen as uReq
 import sys
-print("ran ... ")
 TOKEN = os.environ.get('TOKEN')
 
 def soupify(url):
@@ -75,5 +74,4 @@ def handle_update(message , chat_id , text):
 message = sys.argv[1]
 chat_id = sys.argv[2]
 text = sys.argv[3]
-print(message)
 handle_update(message , chat_id , text) 
