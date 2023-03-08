@@ -1,9 +1,8 @@
-import bottle
 import requests
 import os
 from bs4 import BeautifulSoup as soup
 from urllib.request import urlopen as uReq
-import string
+import sys
 print("ran ... ")
 TOKEN = os.environ.get('TOKEN')
 
@@ -68,25 +67,13 @@ def make_reply(msg):
                 reply= reply.replace(char,'\n')
     return reply
 
-def handle_update():
-
-    update = bottle.request.json
-    message   = update['message']
-    chat_id = message['chat']['id']
-    text    = message['text']
-
-
-    print(update)
+def handle_update(message , chat_id , text):
     sendMessage(chat_id , make_reply(text))
-
-
     return ""
 
-def handle_home():
-    return "This is bot home"
 
-if __name__ == "__main__":
-    app = bottle.Bottle()
-    app.route('/' , "GET", handle_home)
-    app.route("/update", "POST", handle_update)
-    app.run(host="0.0.0.0",  port = int(os.environ.get("PORT", 5000)), debug=True)
+message = sys.argv[1]
+chat_id = sys.argv[2]
+text = sys.argv[3]
+print(message)
+handle_update(message , chat_id , text) 
