@@ -4,7 +4,7 @@ import os
 from bs4 import BeautifulSoup as soup
 from urllib.request import urlopen as uReq
 import string
-
+print("ran ... ")
 TOKEN = os.environ.get('TOKEN')
 
 def soupify(url):
