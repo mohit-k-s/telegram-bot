@@ -1,11 +1,10 @@
 const {spawn} = require('child_process');
-const messageParts = require("../../messageParts")
 
 exports.handler = async (event) => {
+  console.log(event.body)
   const { message } = JSON.parse(event.body);
   const chatid = message.chat.id;
-  const { command, botName, extra } = messageParts(message.text);
-
+  const command = message.text;
   const python = spawn('python3', ['netlify/functions/main.py', `${command}` , chatid , command]);
   python.on('error' , (err) =>{
     console.log(err);
