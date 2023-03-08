@@ -1,4 +1,4 @@
 venv/
-*.txt
+c.txt
 # Local Netlify folder
 .netlify
