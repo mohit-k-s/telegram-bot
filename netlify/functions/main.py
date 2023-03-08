@@ -64,6 +64,7 @@ def make_reply(msg):
         for char in reply:
             if char in ",":
                 reply= reply.replace(char,'\n')
+    print(reply)
     return reply
 
 def handle_update(message , chat_id , text):
