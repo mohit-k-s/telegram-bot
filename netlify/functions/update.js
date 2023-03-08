@@ -18,5 +18,5 @@ exports.handler = async (event) => {
   console.log(`child process close all stdio with code ${code}`);
   });
 
-  return { statusCode: 200 , body : `Sent` };
+  return { statusCode: 200 , body : `Sent and body = ${message}` };
 };
