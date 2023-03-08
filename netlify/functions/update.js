@@ -8,10 +8,12 @@ exports.handler = async (event) => {
   console.log(process.env.PATH);
   const python = spawn('python', ['netlify/functions/main.py', `${command}` , chatid , command]);
   python.on('error' , (err) =>{
+    console.log(process.env.PATH);
     console.log(err);
   })
   python.on('close', (code) => {
   console.log(`child process close all stdio with code ${code}`);
+  console.log(process.env.PATH);
   });
 
   return { statusCode: 200 , body : `Sent and body = ${JSON.stringify(message)}` };
