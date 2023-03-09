@@ -2,3 +2,5 @@ venv/
 c.txt
 # Local Netlify folder
 .netlify
+
+node_modules/
