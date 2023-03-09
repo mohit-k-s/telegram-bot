@@ -8,8 +8,7 @@ exports.handler = async (event) => {
 
   let options = {
     mode: 'text',
-    pythonPath: 'python3',
-    pythonOptions: ['-u'], // get print results in real-time
+    pythonPath: '/usr/bin/python3',
     scriptPath: '.',
     args: [`${command}` , chatid , command]
 };
