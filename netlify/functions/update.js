@@ -13,6 +13,7 @@ exports.handler = async (event) => {
     args: [`${command}` , chatid , command]
 };
 
+  console.log(process.env.PATH);
 
   PythonShell.run('netlify/functions/main.py'  , options) ;
 
