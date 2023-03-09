@@ -8,7 +8,7 @@ exports.handler = async (event) => {
 
   let options = {
     mode: 'text',
-    pythonPath: '/usr/bin/python3',
+    pythonPath: '/usr/local/bin/python3',
     scriptPath: '.',
     args: [`${command}` , chatid , command]
 };
